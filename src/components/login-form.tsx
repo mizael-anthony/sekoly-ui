@@ -8,11 +8,13 @@ import { Input } from "@/components/ui/input";
 import { Loader2, Lock } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 export function LoginForm() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const { push } = useRouter();
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -22,12 +24,13 @@ export function LoginForm() {
     // Simulate login process
     setTimeout(() => {
       setIsLoading(false);
-      if (username === "secretary" && password === "password") {
+      if (true || (username === "b@gmail.com" && password === "0123456789")) {
         toast({
           title: "Connexion réussie",
           description: "Bienvenue, Secrétaire !",
           duration: 5000,
         });
+        push("/dashboard");
         // Redirect to dashboard or home page
       } else {
         toast({

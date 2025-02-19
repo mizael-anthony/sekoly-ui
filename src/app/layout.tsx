@@ -1,7 +1,17 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
+import { ThemeProvider } from "@/components/theme-provider";
+// import ShadcnThemeEditor from "shadcn-theme-editor";
+let ShadcnThemeEditor: any;
+if (process.env.NODE_ENV === "development") {
+  import("shadcn-theme-editor").then((module) => {
+    ShadcnThemeEditor = module.default; // or module, depending on the module's export
+  });
+} else {
+  // eslint-disable-next-line react/display-name
+  ShadcnThemeEditor = () => null;
+}
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -27,7 +37,15 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+          <ShadcnThemeEditor />
+        </ThemeProvider>
       </body>
     </html>
   );

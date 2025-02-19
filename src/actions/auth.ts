@@ -35,7 +35,9 @@ export async function login(prevState: any, formData: FormData) {
     }
 
     // Vérification des identifiants (à remplacer par une vérification réelle dans une base de données)
-    if (username === "secretary" && password === "password") {
+    console.log({ username, password });
+
+    if (username === "rabetsyrolio@gmail.com" && password === "Ro0324735388") {
       return {
         success: true,
         message: "Connexion réussie",
