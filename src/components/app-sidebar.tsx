@@ -1,23 +1,27 @@
-"use client"
+"use client";
 
-import * as React from "react"
+import * as React from "react";
 import {
   BookOpen,
   Bot,
   Command,
   Frame,
+  GraduationCap,
+  LayoutDashboard,
   LifeBuoy,
   Map,
   PieChart,
+  School,
   Send,
   Settings2,
   SquareTerminal,
-} from "lucide-react"
+  User,
+} from "lucide-react";
 
-import { NavMain } from "@/components/nav-main"
-import { NavProjects } from "@/components/nav-projects"
-import { NavSecondary } from "@/components/nav-secondary"
-import { NavUser } from "@/components/nav-user"
+import { NavMain } from "@/components/nav-main";
+import { NavProjects } from "@/components/nav-projects";
+import { NavSecondary } from "@/components/nav-secondary";
+import { NavUser } from "@/components/nav-user";
 import {
   Sidebar,
   SidebarContent,
@@ -26,7 +30,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/components/ui/sidebar"
+} from "@/components/ui/sidebar";
 
 const data = {
   user: {
@@ -36,86 +40,74 @@ const data = {
   },
   navMain: [
     {
-      title: "Playground",
+      title: "Tableau de bord",
       url: "#",
-      icon: SquareTerminal,
+      icon: LayoutDashboard,
       isActive: true,
       items: [
         {
-          title: "History",
+          title: "classe",
           url: "#",
         },
         {
-          title: "Starred",
+          title: "eleve",
           url: "#",
         },
         {
-          title: "Settings",
+          title: "Inscription",
           url: "#",
         },
       ],
     },
     {
-      title: "Models",
+      title: "Classes",
       url: "#",
-      icon: Bot,
+      icon: School,
       items: [
         {
-          title: "Genesis",
+          title: "Liste",
           url: "#",
         },
         {
-          title: "Explorer",
+          title: "Ajout",
           url: "#",
         },
         {
-          title: "Quantum",
+          title: "Mis à jour",
           url: "#",
         },
       ],
     },
     {
-      title: "Documentation",
+      title: "Eleves",
       url: "#",
-      icon: BookOpen,
+      icon: GraduationCap,
       items: [
         {
-          title: "Introduction",
+          title: "Liste",
           url: "#",
         },
         {
-          title: "Get Started",
+          title: "Ajout",
           url: "#",
         },
         {
-          title: "Tutorials",
-          url: "#",
-        },
-        {
-          title: "Changelog",
+          title: "Mis à jour",
           url: "#",
         },
       ],
     },
     {
-      title: "Settings",
+      title: "Inscriptions",
       url: "#",
       icon: Settings2,
       items: [
         {
-          title: "General",
+          title: "Liste",
           url: "#",
         },
         {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
+          title: "Ajout",
           url: "#",
         },
       ],
@@ -150,7 +142,7 @@ const data = {
       icon: Map,
     },
   ],
-}
+};
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -181,5 +173,5 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavUser user={data.user} />
       </SidebarFooter>
     </Sidebar>
-  )
+  );
 }

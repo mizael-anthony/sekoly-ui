@@ -44,7 +44,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
-          <ShadcnThemeEditor />
+          {/* <ShadcnThemeEditor /> */}
         </ThemeProvider>
       </body>
     </html>
