@@ -1,6 +1,5 @@
 "use client";
-
-import { LoginForm } from "@/components/login-form";
+import { ResetPasswordForm } from "@/components/reset-password-form";
 import { Toaster } from "@/components/ui/toaster";
 
 const backgroundStyle = `
@@ -24,7 +23,7 @@ const backgroundStyle = `
   }
 `;
 
-export default function Home() {
+export default function ResetPassword() {
   return (
     <main
       className="min-h-screen flex items-center justify-center"
@@ -38,19 +37,9 @@ export default function Home() {
       </style>
       <div className="bg-pattern"></div>
       <div className="content w-full max-w-md px-4">
-        <LoginForm />
+        <ResetPasswordForm />
       </div>
-      <Toaster
-      // toastOptions={{
-      //   style: {
-      //     background: "rgb(23 23 23)",
-      //     color: "white",
-      //     border: "1px solid rgb(63 63 70)",
-      //   },
-      //   className: "rounded-xl",
-      //   duration: 5000,
-      // }}
-      />
+      <Toaster />
     </main>
   );
 }
